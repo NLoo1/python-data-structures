@@ -11,3 +11,7 @@ def number_compare(a, b):
         'First is greater'
     """
     return "First is greater" if a > b else "Second is greater" if a < b else "Both are equal"
+
+print(number_compare(1,2) + " should be " + "Second is greater")
+print(number_compare(2,1) + " should be " + "First is greater")
+print(number_compare(1,1) + " should be " + "Both are equal")

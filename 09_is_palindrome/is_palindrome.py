@@ -21,3 +21,15 @@ def is_palindrome(phrase):
         >>> is_palindrome('Noon')
         True
     """
+
+    phrase = phrase.lower().replace(" ", "")
+    tempPhrase = phrase
+    phraseList = list(tempPhrase)
+    phraseList.reverse()
+    return True if phraseList == list(phrase) else False;
+
+print(is_palindrome('tacocat'))
+print(is_palindrome('noon'))
+print(is_palindrome('robert'))
+print(is_palindrome('taco cat'))
+print(is_palindrome('noon'))
