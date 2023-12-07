@@ -18,3 +18,16 @@ def repeat(phrase, num):
         >>> repeat('abc', 'nope') is None
         True
     """
+    output = ""
+    if isinstance(num, int) and num >= 0:
+        for x in range(num):
+            output+= phrase
+        return output
+    return None
+    
+
+print(repeat('*', 3))
+print(repeat('abc', 2))
+print(repeat('abc', 0))
+print(repeat('abc', -1))
+print(repeat('abc', 'nope'))

@@ -31,9 +31,23 @@ def includes(collection, sought, start=None):
         True
     """
 
-    if sought in collection:
-        return True
+    if isinstance(collection, (list, str, set, tuple)):
+        if(start and not isinstance(collection, set)):
+            for x in range(start, len(collection)): # Does NOT check for valid start
+                if collection[x] == sought:
+                    return True
+            return False
+        else:
+            for char in collection:
+                if char == sought:
+                    return True
+            return False
+    elif isinstance(collection, dict):
+        if(sought in collection.values()):
+            return True
+        return False
     return False
+        
 
 print(includes([1, 2, 3], 1)) # T
 print(includes([1, 2, 3], 1, 2)) # F
