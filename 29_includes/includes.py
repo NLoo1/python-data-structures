@@ -30,3 +30,15 @@ def includes(collection, sought, start=None):
         >>> includes({"apple": "red", "berry": "blue"}, "blue")
         True
     """
+
+    if sought in collection:
+        return True
+    return False
+
+print(includes([1, 2, 3], 1)) # T
+print(includes([1, 2, 3], 1, 2)) # F
+print(includes("hello", "o")) #T
+print(includes(('Elmo', 5, 'red'), 'red', 1)) #T
+print(includes({1, 2, 3}, 1)) #T
+print(includes({1, 2, 3}, 1, 3)) # T
+print(includes({"apple": "red", "berry": "blue"}, "blue")) #T
